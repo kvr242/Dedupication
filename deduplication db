@@ -1,0 +1,108 @@
+/*
+SQLyog Community Edition- MySQL GUI v7.02 
+MySQL - 5.5.30 : Database - decentralize
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`decentralize` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `decentralize`;
+
+/*Table structure for table `blockreq` */
+
+DROP TABLE IF EXISTS `blockreq`;
+
+CREATE TABLE `blockreq` (
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `message` varchar(2552) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `blockreq` */
+
+LOCK TABLES `blockreq` WRITE;
+
+insert  into `blockreq`(`name`,`password`,`message`) values ('vijay','12345','hi welcome'),(NULL,'12345','please unblock my profile'),('vijay','12345','xvdxv'),('kaviya','123456','dsfvdf'),('raja','06','hjgzcj'),('raja','06','fdgfhjkl'),('raja','','fdgfhjkl');
+
+UNLOCK TABLES;
+
+/*Table structure for table `files` */
+
+DROP TABLE IF EXISTS `files`;
+
+CREATE TABLE `files` (
+  `filepath` varchar(255) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `filecontent` longtext,
+  `name` varchar(255) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `key1` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `auditor` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `files` */
+
+LOCK TABLES `files` WRITE;
+
+insert  into `files`(`filepath`,`filename`,`filecontent`,`name`,`date`,`key1`,`status`,`auditor`) values ('D:/file/EUpload1/num.java','num.java','import java.util.*;\r\nclass num\r\n{\r\npublic static void main(String args[])\r\n{\r\nint x=1;\r\nScanner sn=new Scanner(System.in);\r\nSystem.out.print(\"Enter the no of n list : \");\r\nint n=sn.nextInt();\r\nSystem.out.print(\"N list :\");\r\nfor(int k=1;k<=n;k++)\r\n{\r\nif(k==1)\r\n{\r\nSystem.out.print(k);\r\n}\r\nelse\r\n{\r\nSystem.out.print(\",\"+k);\r\n}\r\n}\r\nSystem.out.println();\r\nSystem.out.print(\"Enter the no of m list : \");\r\nint m=sn.nextInt();\r\nfor(int i=1;i<=m;i++)\r\n{\r\nSystem.out.print(\"L\"+i+\":\");\r\nfor(int j=x;j<=n;)\r\n{\r\nSystem.out.print(\",\"+j);\r\nj=j+m;\r\n}\r\nx++;\r\nSystem.out.println();\r\n}\r\n}\r\n}',NULL,'2014-11-03','52346680','Uploaded','verified'),('D:/file/EUpload/check.txt','check.txt','modification and error checking ','Admin','2014-11-04','39576792','Uploaded','verified'),('D:/file/EUpload/test3.txt','test3.txt','welcome to vinformax','Admin','2014-11-06','26710078','Uploaded','verified'),('D:/file/EUpload/store.txt','store.txt','test store file','Admin','2014-11-06','87244597','Null','verified'),('D:/file/EUpload/New Text Document.txt','New Text Document.txt','sdfghjkl','Admin','2014-11-10','29246642','Uploaded','not verified'),('D:/file/EUpload/4.txt','4.txt','raj','Admin','2014-11-10','22636163','Uploaded','not verified'),('D:/file/EUpload/11.txt','11.txt','abcdefgh','Admin','2014-11-10','53023167','Uploaded','not verified'),('D:/file/EUpload/20.txt','20.txt','hi how r u','Admin','2014-11-10','53755482','Uploaded','not verified'),('D:/file/EUpload/123.txt','123.txt','sfgdjghgjhgsdkjdsgh','Admin','2014-11-10','87891955','Uploaded','not verified');
+
+UNLOCK TABLES;
+
+/*Table structure for table `register` */
+
+DROP TABLE IF EXISTS `register`;
+
+CREATE TABLE `register` (
+  `id` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `mail` varchar(255) DEFAULT NULL,
+  `times` varchar(255) DEFAULT NULL,
+  `dates` varchar(255) DEFAULT NULL,
+  `pkey` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `register` */
+
+LOCK TABLES `register` WRITE;
+
+insert  into `register`(`id`,`name`,`password`,`city`,`mail`,`times`,`dates`,`pkey`,`status`) values ('5151','vijay','12345','chennai','vijay@gmail.com','07:11:34','28:10:2014','111222333','normal'),('123456','kaviya','12345','salem','kavi@gmail.com','03:32:36','04:11:2014','11223344','block'),('1','1','11','1','11','02:33:23','10:11:2014','13242567890','block'),('06','raja','06','chennai','raja06@gmail.com','04:21:27','10:11:2014','12121212121',NULL);
+
+UNLOCK TABLES;
+
+/*Table structure for table `requestst` */
+
+DROP TABLE IF EXISTS `requestst`;
+
+CREATE TABLE `requestst` (
+  `userid` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `key2` varchar(255) DEFAULT NULL,
+  `request` varchar(255) DEFAULT NULL,
+  `datereq` varchar(255) DEFAULT NULL,
+  `response` varchar(255) DEFAULT NULL,
+  `dres` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `requestst` */
+
+LOCK TABLES `requestst` WRITE;
+
+insert  into `requestst`(`userid`,`username`,`filename`,`key2`,`request`,`datereq`,`response`,`dres`,`status`) values ('5151','vijay','num.java','52346680','Sent','Mon Nov 03 17:55:14 IST 2014','Done','Mon Nov 03 18:56:43 IST 2014','Downloaded'),('123456','kaviya','file.java','Not Set','Sent','Tue Nov 04 16:40:24 IST 2014','Done','Tue Nov 04 16:41:11 IST 2014','Empty'),('123456','kaviya','f1.txt','12345678','Sent','Tue Nov 04 16:53:34 IST 2014','Done','Fri Nov 07 12:22:59 IST 2014','Downloaded'),('5151','vijay','check.txt','39576792','Sent','Tue Nov 04 23:24:40 IST 2014','Done','Tue Nov 04 23:24:56 IST 2014','Downloaded'),('123456','kaviya','addno.java','12345678','Sent','Wed Nov 05 11:33:42 IST 2014','Done','Fri Nov 07 12:20:43 IST 2014','Empty'),('5151','vijay','dbconnection.txt','14952886','Sent','Wed Nov 05 11:47:08 IST 2014','Done','Fri Nov 07 12:14:21 IST 2014','Downloaded'),('5151','vijay','addno.java','Empty','Sent','Fri Nov 07 15:11:28 IST 2014','Pending','Empty','Empty'),('5151','vijay','check.txt','Empty','Sent','Fri Nov 07 15:12:04 IST 2014','Pending','Empty','Downloaded'),('5151','vijay','addno.java','Empty','Sent','Sun Nov 09 22:29:46 IST 2014','Pending','Empty','Empty'),('5151','vijay','store.txt','Empty','Sent','Mon Nov 10 14:40:21 IST 2014','Pending','Empty','Empty'),('06','raja','test3.txt','26710078','Sent','Mon Nov 10 15:22:44 IST 2014','Done','Mon Nov 10 16:05:01 IST 2014','Downloaded'),('06','raja','test3.txt','26710078','Sent','Mon Nov 10 16:03:53 IST 2014','Done','Mon Nov 10 16:05:01 IST 2014','Empty'),('06','raja','store.txt','87244597','Sent','Mon Nov 10 16:28:09 IST 2014','Done','Mon Nov 10 16:28:50 IST 2014','Downloaded'),('06','raja','store.txt','Empty','Sent','Mon Nov 10 16:29:26 IST 2014','Pending','Empty','Downloaded');
+
+UNLOCK TABLES;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
